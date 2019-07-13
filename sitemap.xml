@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://koninklijkekunst.nl/</loc>
-<changefreq>never</changefreq>
-<priority>1.0</priority>
-</url>
-</urlset> 
+    <url>
+        <loc>https://koninklijkekunst.nl/</loc>
+        <lastmod>2019-07-13</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>

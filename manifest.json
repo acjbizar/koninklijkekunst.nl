@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "version": "20190713",
+    "name": "Koninklijke Kunst",
+    "default_locale": "nl",
+    "description": "Domeinnaam + website, 2012. Klik of tik om te bouwen.",
+    "author": "Alexander Christiaan Jacob",
+    "theme_color": "white",
+    "homepage_url": "./",
+    "start_url": "./",
+    "icons": [
+        {
+            "src": "https://koninklijkekunst.nl/apple-touch-icon-precomposed.png"
+        }
+    ],
+    "display": "fullscreen"
+}
