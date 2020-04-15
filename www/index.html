@@ -55,12 +55,13 @@
 
         window.onload = function(){
             var content = document.getElementById('content');
-            var p = 0;
-            var s = Math.pow(2, p);
+            p = 0;
+            s = Math.pow(2, p);
             content.ontouchstart = window.onclick;
         };
 
-        window.onclick = function(){
+        window.onclick = function()
+        {
 
             if(s >= window.innerWidth || p >= 11)
             {
@@ -79,9 +80,6 @@
 
             s = Math.pow(2, p);
         };
-
-        window.ontouchstart = window.onclick;
-
 
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
