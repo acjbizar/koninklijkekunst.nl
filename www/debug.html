@@ -1,0 +1,138 @@
+<!doctype html>
+<html dir="ltr" lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="K∴K∴">
+    <meta name="application-name" content="K∴K∴">
+    <meta name="description" content="Domeinnaam + website, 2012. Klik of tik om te bouwen.">
+    <meta name="msapplication-TileColor" content="#002366">
+    <meta name="msapplication-TileImage" content="https://koninklijkekunst.nl/apple-touch-icon-144x144-precomposed.png">
+    <meta name="robots" content="follow,index,noarchive">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@ACJ">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width">
+    <meta property="fb:admins" content="509248955">
+    <meta property="og:description" content="Domeinnaam + website, 2012. Klik of tik om te bouwen.">
+    <meta property="og:image" content="https://koninklijkekunst.nl/p7.gif">
+    <meta property="og:image:height" content="256">
+    <meta property="og:image:width" content="256">
+    <meta property="og:title" content="Koninklijke Kunst">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://koninklijkekunst.nl/">
+    <link rel="apple-touch-icon-precomposed" href="https://koninklijkekunst.nl/apple-touch-icon-precomposed.png">
+    <link rel="author" href="https://alexanderchristiaanjacob.com/" title="Alexander Christiaan Jacob">
+    <link rel="canonical" href="https://koninklijkekunst.nl/">
+    <link rel="help" href="https://github.com/acjbizar/koninklijkekunst.nl">
+    <link rel="shortcut icon" href="https://koninklijkekunst.nl/favicon.ico">
+    <link rel="manifest" href="https://koninklijkekunst.nl/manifest.json">
+    <title>Koninklijke Kunst</title>
+    <style>
+        *{border:0;margin:0;outline:0;padding:0}
+        body,div,html{cursor:pointer;display:block}
+        body{background:url('p0.gif') #fff repeat;border:1px solid gold;bottom:0;left:0;position:absolute;right:0;top:0}
+        div{height:100%;left:0;position:absolute;top:0;visibility:hidden;width:100%}
+        html{background:url('p11.gif') #fff repeat;height:100%;overflow:hidden}
+        #p1{background:url('p1.gif') #fff repeat}
+        #p2{background:url('p2.gif') #fff repeat}
+        #p3{background:url('p3.gif') #fff repeat}
+        #p4{background:url('p4.gif') #fff repeat}
+        #p5{background:url('p5.gif') #fff repeat}
+        #p6{background:url('p6.gif') #fff repeat}
+        #p7{background:url('p7.gif') #fff repeat}
+        #p8{background:url('p8.gif') #fff repeat}
+        #p9{background:url('p9.gif') #fff repeat}
+        #p10{background:url('p10.gif') #fff repeat}
+        #p11{background:url('p11.gif') #fff repeat}
+
+        h1 {
+            position: absolute;left: 0;top: 0;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36569769-3"></script>
+    <script>
+        "use strict";
+
+        var p;
+        var s;
+        var clicks = 0;
+        var h1;
+
+        window.onload = function(){
+            var content = document.getElementById('content');
+            p = 0;
+            s = Math.pow(2, p);
+            h1 = document.getElementsByTagName('h1')[0];
+
+            content.ontouchstart = window.onclick;
+        };
+
+        window.onclick = function()
+        {
+            clicks++;
+            h1.innerText = clicks;
+
+            if(s >= window.innerWidth || p >= 11)
+            {
+                p = 0;
+                var x = document.getElementsByTagName('div');
+                for(var i = 0; i < x.length; ++i)
+                {
+                    x[i].style.visibility = 'hidden';
+                }
+            }
+            else
+            {
+                ++p;
+                document.getElementById('p' + p).style.visibility = 'visible';
+            }
+
+            s = Math.pow(2, p);
+        };
+
+        //window.ontouchstart = window.onclick;
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-36569769-3');
+
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "VisualArtwork",
+            "name": "Koninklijke Kunst",
+            "image": "https://koninklijkekunst.nl/apple-touch-icon-precomposed.png",
+            "description": "Domeinnaam + website, 2012. Klik of tik om te bouwen.",
+            "url": "https://koninklijkekunst.nl/",
+            "creator": [
+                {
+                    "@type": "Person",
+                    "name": "Alexander Christiaan Jacob",
+                    "url": "https://alexanderchristiaanjacob.com/",
+                    "sameAs": "https://twitter.com/acj"}
+            ],
+            "artform": "website",
+            "accessModeSufficient": "visual",
+            "interactivityType": "mixed"
+        }
+    </script>
+</head>
+<body id=content>
+<div id=p1></div>
+<div id=p2></div>
+<div id=p3></div>
+<div id=p4></div>
+<div id=p5></div>
+<div id=p6></div>
+<div id=p7></div>
+<div id=p8></div>
+<div id=p9></div>
+<div id=p10></div>
+<div id=p11></div>
+<h1>0</h1>
+</body>
+</html>
