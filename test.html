@@ -35,38 +35,58 @@
 <script>
     "use strict";
 
-    const canvas = document.getElementById("canvas");
-    const c = canvas.getContext("2d");
-    c.fillStyle = '#fff';
-
-    let p = 0;
-    let base = 4;
-    let d = base ^ p;
-    let step = d * 2;
-
-    function paint() {
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const canvas = document.getElementById("canvas");
+        const r = canvas.getBoundingClientRect();
+        canvas.width = r.width;
+        canvas.height = r.height;
         let width = canvas.width;
         let height = canvas.height;
 
-        let cols = Math.ceil(width / d);
-        let rows = Math.ceil(height / d);
+        const c = canvas.getContext("2d");
+        c.fillStyle = '#fff';
 
-        for(let y = 0; y < height; y += d) {
-            let ix = 0;
+        let p = 0;
+        let base = 2;
+        let d = Math.pow(base, p);
+        let step = d * 2;
 
-            if(y % step === 0) {
-                ix = d;
-            } else {
-                ix = 0;
+        function paint() {
+            c.clearRect(0, 0, canvas.width, canvas.height);
+
+            if(d >= width) {
+                p = 0;
             }
 
-            for(let x = ix; x < width; x += step) {
-                c.fillRect(x, y, d, d);
+            d = Math.pow(base, p);
+            step = d * 2;
+            console.log(d);
+
+            for(let y = 0; y < height; y += d) {
+                let ix = 0;
+
+                if(y % step === 0) {
+                    ix = d;
+                } else {
+                    ix = 0;
+                }
+
+                for(let x = ix; x < width; x += step) {
+                    c.fillRect(x, y, d, d);
+                }
             }
         }
-    }
 
-    paint();
+        canvas.addEventListener('click', function(){
+            ++p;
+            //console.log(p);
+
+            paint();
+        });
+
+        paint();
+    });
+
 </script>
 </body>
 </html>
