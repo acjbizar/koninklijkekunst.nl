@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width">
+    <title>Koninklijke Kunst</title>
+    <style>
+        html {
+            background: blue;
+        }
+
+        canvas {
+            background: lime;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    "use strict";
+
+    const canvas = document.getElementById("canvas");
+    const c = canvas.getContext("2d");
+    c.fillStyle = '#000';
+
+    let p = 0;
+    let base = 4;
+    let d = base ^ p;
+    let step = d * 2;
+
+    function paint() {
+        let width = canvas.width;
+        let height = canvas.height;
+
+        let cols = Math.ceil(width / d);
+        let rows = Math.ceil(height / d);
+
+        for(let x = 0; x <= width; x += step) {
+            for(let y = 0; y <= height; y += step) {
+                c.fillRect(x, y, d, d);
+            }
+        }
+    }
+
+    paint();
+</script>
+</body>
+</html>
