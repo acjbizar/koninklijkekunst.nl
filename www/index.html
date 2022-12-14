@@ -62,7 +62,7 @@
         window.onclick = function()
         {
 
-            if(s >= window.innerWidth || p >= 11)
+            if((s >= window.innerWidth && s >= window.innerHeight) || p > 11)
             {
                 p = 0;
                 var x = document.getElementsByTagName('div');
