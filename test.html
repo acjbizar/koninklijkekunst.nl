@@ -4,12 +4,29 @@
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width">
     <title>Koninklijke Kunst</title>
     <style>
-        html {
-            background: blue;
+        *,
+        *::after,
+        *::before {
+            border: 0;
+            margin: 0;
+            outline: 0;
+            padding: 0;
         }
 
         canvas {
-            background: lime;
+            background: black;
+            bottom: 0;
+            display: block;
+            height: 100%;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        html {
+            background: blue;
         }
     </style>
 </head>
@@ -20,7 +37,7 @@
 
     const canvas = document.getElementById("canvas");
     const c = canvas.getContext("2d");
-    c.fillStyle = '#000';
+    c.fillStyle = '#fff';
 
     let p = 0;
     let base = 4;
@@ -34,8 +51,16 @@
         let cols = Math.ceil(width / d);
         let rows = Math.ceil(height / d);
 
-        for(let x = 0; x <= width; x += step) {
-            for(let y = 0; y <= height; y += step) {
+        for(let y = 0; y < height; y += d) {
+            let ix = 0;
+
+            if(y % step === 0) {
+                ix = d;
+            } else {
+                ix = 0;
+            }
+
+            for(let x = ix; x < width; x += step) {
                 c.fillRect(x, y, d, d);
             }
         }
