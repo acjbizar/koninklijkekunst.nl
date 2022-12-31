@@ -31,9 +31,9 @@
     <style>
         *{border:0;margin:0;outline:0;padding:0;-webkit-tap-highlight-color: rgba(0,0,0,0)}
         body,div,html{cursor:pointer;display:block}
-        body{background:url('p0.gif') #fff repeat;border:1px solid gold;bottom:0;left:0;position:absolute;right:0;top:0}
+        body{background:#000;border:1px solid gold;bottom:0;left:0;position:absolute;right:0;top:0}
         div{height:100%;left:0;position:absolute;top:0;visibility:hidden;width:100%}
-        html{background:url('p11.gif') #fff repeat;height:100%;overflow:hidden}
+        html{background:#000;height:100%;overflow:hidden}
         #p1{background:url('p1.gif') #fff repeat}
         #p2{background:url('p2.gif') #fff repeat}
         #p3{background:url('p3.gif') #fff repeat}
@@ -50,19 +50,20 @@
     <script>
         "use strict";
 
-        var p;
+        var p = 0;
         var s;
 
         window.onload = function(){
             var content = document.getElementById('content');
-            p = 0;
+            ++p;
+            document.getElementById('p' + p).style.visibility = 'visible';
             s = Math.pow(2, p);
         };
 
         window.onclick = function()
         {
 
-            if((s >= window.innerWidth && s >= window.innerHeight) || p > 11)
+            if(s >= window.innerWidth || s >= window.innerHeight || p > 11)
             {
                 p = 0;
                 var x = document.getElementsByTagName('div');
